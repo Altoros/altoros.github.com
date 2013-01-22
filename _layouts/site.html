@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>{{ post.title }}</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Altoros Team</h1>
+        <h2>Dir["notes/*"].each{|nn| puts File.read(nn)}</h2>
+        <a href="https://github.com/Altoros" class="button"><small>Find us on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          {{ content }}
+        </section>
+
+        <aside id="sidebar">
+          <p>Follow us on twitter <a href="https://twitter.com/altoros">@altoros</a></p>
+        </aside>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    if (document.location.host != 'localhost') {
+      try {
+        var _gaq = _gaq || [];
+        var pluginUrl = 'http://www.google-analytics.com/plugins/ga/inpage_linkid.js';
+        _gaq.push(['_require', 'inpage_linkid', pluginUrl])
+        _gaq.push(['_setAccount', '']); /* FIXME */
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script');
+          ga.type = 'text/javascript';
+          ga.async = true;
+          ga.src = 'http://www.google-analytics.com/ga.js';
+
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(ga, s);
+        })();
+      } catch (err) {}
+    }
+    </script>
+  </body>
+</html>

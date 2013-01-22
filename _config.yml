@@ -1,0 +1,8 @@
+url: 'http://altoros.github.com'
+permalink: '/:year/:title'
+pygments: true
+markdown: rdiscount
+rdiscount:
+  extensions:
+    - :smart
+    - :autolink
