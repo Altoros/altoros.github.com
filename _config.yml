@@ -1,3 +1,4 @@
+paginate: 5
 url: 'http://altoros.github.com'
 permalink: '/:year/:title'
 pygments: true

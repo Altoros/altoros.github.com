@@ -1,0 +1,8 @@
+<div class="page_title">
+  <h1><a href="{{page.url}}" rel="bookmark" title="Permalink to {{page.title}}">{{page.title}}</a></h1>
+  {% include social_links.html %}
+  <div class="meta">
+    <span class="datetime">{{page.date | date: "%b %d, %Y" }}</span>
+    <small>by <a href="{{page.author.link}}">{{page.author.name}}</a></small>
+  </div>
+</div>

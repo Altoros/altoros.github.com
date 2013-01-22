@@ -5,21 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print" />
+    <link rel="alternate" href="{{site.url}}/atom.xml" title="Altoros Team" type="application/atom+xml" />
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title>{{ post.title }}</title>
+    <title>{{page.title}}</title>
   </head>
 
   <body>
     <header>
       <div class="inner">
-        <h1>Altoros Team</h1>
+        <h1><a href="{{ site.url }}">Altoros Team</a></h1>
         <h2>Dir["notes/*"].each{|nn| puts File.read(nn)}</h2>
         <a href="https://github.com/Altoros" class="button"><small>Find us on</small>GitHub</a>
       </div>
@@ -28,11 +29,20 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          {{ content }}
+          {{content}}
         </section>
 
         <aside id="sidebar">
           <p>Follow us on twitter <a href="https://twitter.com/altoros">@altoros</a></p>
+          <p>Subscribe to <a href="{{site.url}}/atom.xml">Atom feed</a></p>
+          {% if site.posts != empty %}
+            <ul>
+              Recent posts
+              {% for page in site.posts %}
+              <li><a href="{{page.url}}" rel="bookmark" title="Permalink to {{page.title}}">{{page.title}}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
         </aside>
       </div>
     </div>
@@ -43,7 +53,7 @@
         var _gaq = _gaq || [];
         var pluginUrl = 'http://www.google-analytics.com/plugins/ga/inpage_linkid.js';
         _gaq.push(['_require', 'inpage_linkid', pluginUrl])
-        _gaq.push(['_setAccount', '']); /* FIXME */
+        _gaq.push(['_setAccount', 'UA-18113495-8']);
         _gaq.push(['_trackPageview']);
 
         (function() {

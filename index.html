@@ -3,3 +3,27 @@ layout: site
 title: Altoros Team
 ---
 
+{% for page in paginator.posts %}
+<div class="page">
+  {% include page_meta.html %}
+  <div id="page_contents">
+    {{page.content}}
+  </div>
+</div>
+{% endfor %}
+
+{% if paginator.page %}
+  <div class="pagination">
+    <span class="page_number ">Page: {{paginator.page}} of {{paginator.total_pages}}</span>
+    {% if paginator.previous_page %}
+      {% if paginator.previous_page == 1 %}
+        <a href="/" class="previous">Previous</a>
+      {% else %}
+        <a href="/page{{paginator.previous_page}}" class="previous">Previous</a>
+      {% endif %}
+    {% endif %}
+    {% if paginator.next_page %}
+      <a href="/page{{paginator.next_page}}" class="next">Next</a>
+    {% endif %}
+  </div>
+{% endif %}

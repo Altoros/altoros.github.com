@@ -1,0 +1,41 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Altoros Team</title>
+ <link href="{{site.url}}/atom.xml" rel="self"/>
+ <link href="{{site.url}}/"/>
+ {% if site.posts == empty %}
+    <updated>1970-01-01T00:00:00+00:00</updated>
+ {% else %}
+    <updated>{{ site.posts.first.date | date_to_xmlschema }}</updated>
+ {% endif %}
+ <id>{{site.url}}/</id>
+ <author>
+   <name>Altoros Team</name>
+   <email>team@altoros.com</email>
+ </author>
+
+ {% for page in site.posts %}
+ <entry>
+   <title>{{page.title}}</title>
+   <link href="{{site.url}}{{page.url}}/"/>
+   <updated>{{page.date | date_to_xmlschema}}</updated>
+   <id>{{site.url}}{{page.id}}/</id>
+   <author>
+       <name>{{page.author.name}}</name>
+       <uri>{{page.author.url}}</uri>
+   </author>
+   <content type="html">
+       {% capture meta %}
+         {% include page_meta.html %}
+       {% endcapture %}
+       {{meta | xml_escape}}
+       {{page.content | xml_escape}}
+   </content>
+ </entry>
+ {% endfor %}
+
+</feed>
