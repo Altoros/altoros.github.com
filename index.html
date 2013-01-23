@@ -12,7 +12,7 @@ title: Altoros Team
 </div>
 {% endfor %}
 
-{% if paginator.page %}
+{% if paginator.page and paginator.total_pages > 1 %}
   <div class="pagination">
     <span class="page_number ">Page: {{paginator.page}} of {{paginator.total_pages}}</span>
     {% if paginator.previous_page %}
