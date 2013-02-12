@@ -29,10 +29,6 @@ layout: nil
        <uri>{{page.author.url}}</uri>
    </author>
    <content type="html">
-       {% capture meta %}
-         {% include page_meta.html %}
-       {% endcapture %}
-       {{meta | xml_escape}}
        {{page.content | xml_escape}}
    </content>
  </entry>
