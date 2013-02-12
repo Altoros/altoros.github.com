@@ -278,6 +278,6 @@ Apache 2.0 License. You'll find the [sources on github][12].
 [8]: http://www.couchbase.com/why-nosql/nosql-database
 [9]: https://github.com/igrigorik/em-synchrony/
 [10]: http://eventmachine.rubyforge.org/EventMachine/Connection.html
-[11]: http://www.couchbase.com/issues
+[11]: http://www.couchbase.com/issues/browse/RCBC
 [12]: http://github.com/couchbase/couchbase-ruby-client/
 [13]: http://blog.couchbase.com
