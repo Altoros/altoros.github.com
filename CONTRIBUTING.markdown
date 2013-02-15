@@ -26,6 +26,23 @@ To be accepted your post should follow these simple rules:
     The `link:` property could be any valid URL which describes your
     identity better.
 
+3. If your post is quite long, it will be great if you will hide
+   second part of it on the index page. To do so you should wrap it
+   using `<!-- full start -->` and `<!-- full end -->`. For example:
+
+        Bla bla bla...
+
+        <!-- full start -->
+
+        Long body.....
+        .....
+        .....
+
+        <!-- full end -->
+
+   In this case the generator will be able to cut this section and
+   hide on index page.
+
 For those who aren't familiar with ruby ecosystem, steps to setup
 local jekyll site:
 

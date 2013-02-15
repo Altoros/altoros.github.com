@@ -116,3 +116,5 @@ end
 
 
 Here it is assumed that **local_env.yml** is existed in the **{shared_path}/config/** folder on the server. Check out here that I've done the same things with my **database.yml** config (by the way ignore the **database.yml** in your [CVS](http://en.wikipedia.org/wiki/Concurrent_Versions_System) it's the best practice too).
+
+<!-- full end -->
