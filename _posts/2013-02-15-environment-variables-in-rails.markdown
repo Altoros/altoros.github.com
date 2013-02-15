@@ -53,16 +53,14 @@ export FOG_DIRECTORY=my-bucket-name
 
 Then reboot shell and start Rails application. You will see that application is configured correctly. You enjoy it and going to deploy application to the production on the VPS or VDS the same way and everything will be work there... before first reboot. Why `ENV['FOG_DIRECTORY']` is `nil` after server reboot? The answer is simple - [nginx](http://nginx.org/) or another web server (I don't know which one you use, but I prefer using **nginx**) starts before evaluating `~/.bashrc` and even `/etc/environment`.
 
-If you use [assets_sync](https://github.com/rumblelabs/asset_sync) to upload your assets to the **cloud** you can have this error during deployment with capistrano](https://github.com/capistrano/capistrano):
+If you use [assets_sync](https://github.com/rumblelabs/asset_sync) to upload your assets to the **cloud** you can have this error during deployment with [capistrano](https://github.com/capistrano/capistrano):
 
-{% highlight ruby %}
-AssetSync: using default configuration from built-in initializer
-rake aborted!
-Fog provider can't be blank, Fog directory can't be blank
+    AssetSync: using default configuration from built-in initializer
+    rake aborted!
+    Fog provider can't be blank, Fog directory can't be blank
 
-Tasks: TOP => assets:precompile:nondigest
-(See full trace by running task with --trace)
-{% endhighlight %}
+    Tasks: TOP => assets:precompile:nondigest
+    (See full trace by running task with --trace)
 
 So we have to looking for another way how to define these variables.
 
@@ -90,7 +88,7 @@ Now you have to create **yml** file in **config** folder and add it to **.gitign
 
 > Key values are not real, so it doesn't make sense to paste them in your configuration files
 
-{% highlight ruby %}
+{% highlight yaml %}
 FOG_PROVIDER: AWS
 FOG_DIRECTORY: my-bycket-name
 AWS_ACCESS_KEY_ID: ASFAWFSFDGSDEQWEFGD
