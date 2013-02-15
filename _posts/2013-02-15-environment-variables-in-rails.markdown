@@ -6,7 +6,6 @@ author:
   name: Andrey Koleshko
   link: https://github.com/ka8725
 ---
-{% include JB/setup %}
 
 When you see configuration examples in gems README like this:
 
@@ -38,7 +37,9 @@ end
 {% endhighlight %}
 
 what are they do you think?
-Where should you define `ENV['FOG_DIRECTORY']`? Should you define it in the shell script (like `~/.bashrc`, `~/.bash_profile`, `~/.profile` and etc.) or may be in the `/etc/environment`. If you think so I have to disappoint you - you are wrong!
+Where should you define `ENV['FOG_DIRECTORY']`? Should you define it in the shell script (like `~/.bashrc`, `~/.bash_profile`, `~/.profile` and etc.) or may be in the `/etc/environment`? If you think so I have to disappoint you - you are wrong!
+
+<!-- full start -->
 
 ## Challenge
 
