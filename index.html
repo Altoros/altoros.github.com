@@ -3,7 +3,7 @@ layout: site
 title: Altoros Team
 ---
 
-{% for page in paginator.posts %}
+{% for page in paginator.posts | sort: 'date' | sort: 'url' %}
 <div class="page">
   {% include page_meta.html %}
   <div id="page_contents">

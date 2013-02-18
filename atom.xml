@@ -18,7 +18,7 @@ layout: nil
    <email>team@altoros.com</email>
  </author>
 
- {% for page in site.posts %}
+ {% for page in site.posts | sort: 'date' | sort: 'url' %}
  <entry>
    <title>{{page.title}}</title>
    <link href="{{site.url}}{{page.url}}/"/>
