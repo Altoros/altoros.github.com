@@ -6,10 +6,10 @@ you need to learn more.
 
 To be accepted your post should follow these simple rules:
 
-1. To have name like `_posts/%Y-%m-%d-%{slug}.markdown`. You can
+1. To have name like `_posts/%{sequential_number}-%{slug}.markdown`. You can
    easily create new file with this oneliner:
 
-        $ touch _posts/`date +%Y-%m-%d`-my-cool-post.markdown
+        $ touch _posts/`ls _posts | wc -l`-my-cool-post.markdown
 
 2. To have mandatory YAML header like this:
 
