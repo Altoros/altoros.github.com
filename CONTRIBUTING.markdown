@@ -50,9 +50,9 @@ local jekyll site:
 
         $ sudo apt-get install -y ruby rubygems
 
-2. Install jekyll
+2. Install jekyll and rdiscount
 
-        $ sudo gem install jekyll
+        $ sudo gem install rdiscount jekyll
 
 3. Fork this repository and clone your fork locally
 
