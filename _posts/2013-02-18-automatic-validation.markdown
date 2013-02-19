@@ -7,7 +7,7 @@ author:
   link: https://github.com/FUT
 ---
 
-Every time you develop new application you one simple problem: lack of validation.
+Every time you develop new application you have one simple problem: lack of validation.
 
 The reason may be different. May be specification is not fully determined or the feature will be enhanced/changed/refactored later. But nothing will save you from bugs like:
 
