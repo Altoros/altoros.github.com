@@ -17,7 +17,7 @@ With Rack Charm you can deploy your applications on EC2 in a literally few minut
 <!-- full start -->
 > All examples are tested for Ubuntu 12.04 Precise Pangolin
 
-### Getting started
+## Getting started
 
 Install Juju
 
@@ -56,7 +56,7 @@ Bootstrap the environment
 juju bootstrap
 {% endhighlight %}
 
-### Sinatra example with [Html2Haml](https://github.com/haml/html2haml) application
+## Sinatra example with [Html2Haml](https://github.com/haml/html2haml) application
 
 Deploy a web-server
 
@@ -96,7 +96,7 @@ and find the nginx-passenger instance's public URL
 juju status
 {% endhighlight %}
 
-### Rails 3 example
+## Rails 3 example
 
 > It's almost the same as Sinatra deployment, but additionally uses PostgreSQL database.
 
@@ -132,7 +132,7 @@ juju status
 
 > You can find more of configuration examples and deployment options at [Rack Charm page](http://jujucharms.com/charms/precise/rack)
 
-### Links
+## Links
 - [Juju documentation](https://juju.ubuntu.com/docs/)
 - [Juju GUI](https://juju.ubuntu.com/resources/the-juju-gui/) - web interface that you can deploy right into your environment.
   It lets you model and design your entire stack via your web browser, including integration with the Charm Store.
