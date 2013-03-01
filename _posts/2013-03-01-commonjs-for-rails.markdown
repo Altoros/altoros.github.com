@@ -44,8 +44,8 @@ If you are not using Rails 3.1-3.x, you may also need
        gem 'sprockets-rails'
 
 After that, you'll get an ability to create CommonJS modules instead of ordinary JS files.
-To do that, simply prefix file extension with `module`. For example, `widget.js.coffee` must be
-`widget.module.js.coffee`. Now you get two new keywords:
+To do that, simply prefix file extension with `module`. For example, `widget.js.coffee`
+must become `widget.module.js.coffee`. Now you get two new keywords:
 
 1. `require()` loads modules, necessary for the current one.
 2. `module.exports` specifies, what should be returned, if some other module will require this one.
@@ -60,7 +60,7 @@ class Widget
 module.exports = Widget
 {% endhighlight %}
 
-To use it in some other module, for example `app/assets/javascripts/modules/specific/window.module.js.coffee`,
+To use it in some other module, for example `/modules/specific/window.module.js.coffee`,
 we just require it:
 
 {% highlight javascript %}
@@ -74,9 +74,24 @@ class Window extends Widget
 module.exports = Window
 {% endhighlight %}
 
-We can also use a dot - `require('./../widget')` or even an absolute path - `require('modules/widget')`.
+We can also use a dot:
 
-The `module` extension wraps your code with `require.define({'path/to/module': function(exports, require, module){ /* your code */ }});`
+{% highlight javascript %}
+require('./../widget')
+{% endhighlight %}
+
+Or even an absolute path
+
+{% highlight javascript %}
+require('modules/widget')
+{% endhighlight %}
+
+The `module` extension wraps your code with
+
+{% highlight javascript %}
+require.define({'path/to/module': function(exports, require, module){ /* your code */ }});
+{% endhighlight %}
+
 This callback is executed only if the module is required somewhere. That's why you can no longer worry about the correct `#= require` chain.
 A single `#= require_tree ./modules` in `application.js` would be enough.
 
