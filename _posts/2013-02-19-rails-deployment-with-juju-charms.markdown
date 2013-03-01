@@ -11,10 +11,11 @@ With Juju it is easy to build entire environments on public clouds like Amazon W
 
 Juju uses [Charms](http://jujucharms.com/) to deploy and configure services. Charms are scripts that can be written in any language.
 There are over 100 services ready to deploy.
-And now it's possible to deploy Rack applications with Juju.
+
+With Rack Charm you can deploy your applications on EC2 in a literally few minutes. Let me give some examples.
 
 <!-- full start -->
-> All examples are for Ubuntu 12.04 Precise Pangolin
+> All examples are tested for Ubuntu 12.04 Precise Pangolin
 
 ### Getting started
 
@@ -31,9 +32,9 @@ Run the command-line utility with no arguments to create a sample environment:
 juju bootstrap
 {% endhighlight %}
 
-Configure your environment `~/.juju/environments.yaml`, here is example using EC2
+Configure your environment `~/.juju/environments.yaml`, here is EC2 example
 
-> Juju can also run services on your local machine via LXC. Check out [Configure a local environment](https://juju.ubuntu.com/docs/getting-started.html#configuring-a-local-environment) page.
+> See how to run services on your local machine via LXC on [Configure a local environment](https://juju.ubuntu.com/docs/getting-started.html#configuring-a-local-environment) page.
 
 {% highlight yaml %}
 default: sample
@@ -55,15 +56,15 @@ Bootstrap the environment
 juju bootstrap
 {% endhighlight %}
 
-### Sinatra example
+### Sinatra example with [Html2Haml](https://github.com/haml/html2haml) application
 
-Deploy web-server
+Deploy a web-server
 
 {% highlight console %}
 juju deploy nginx-passenger
 {% endhighlight %}
 
-Create `html2haml.yml` config file
+Create a config file for Rack Charm, let's call it `html2haml.yml`
 
 {% highlight yaml %}
 html2haml:
@@ -75,19 +76,29 @@ Deploy Rack Charm with config you've created on the previous step
 
 {% highlight console %}
 juju deploy rack html2haml --config html2haml.yml
+{% endhighlight %}
+
+and relate it to the web-server
+
+{% highlight console %}
 juju add-relation html2haml nginx-passenger
 {% endhighlight %}
 
-Open the stack up to the outside world and find the nginx-passenger instance's public URL
+Open the stack up to the outside world
 
 {% highlight console %}
 juju expose nginx-passenger
+{% endhighlight %}
+
+and find the nginx-passenger instance's public URL
+
+{% highlight console %}
 juju status
 {% endhighlight %}
 
 ### Rails 3 example
 
-> It's almost exactly the same as Sinatra deployment, but additionally uses PostgreSQL database.
+> It's almost the same as Sinatra deployment, but additionally uses PostgreSQL database.
 
 Create `sample_rails.yml` config file
 
@@ -97,19 +108,29 @@ sample_rails:
   app_name: sample_rails
 {% endhighlight %}
 
-Deploy the stack
+Deploy the application and web-server
 
 {% highlight console %}
 juju deploy rack sample_rails --config sample_rails.yml
 juju deploy nginx-passenger
 juju add-relation sample_rails nginx-passenger
+{% endhighlight %}
+
+deploy PostgreSQL and relate it to the application
+
+{% highlight console %}
 juju deploy postgresql
 juju add-relation postgresql:db sample_rails
+{% endhighlight %}
+
+expose nginx-passenger and find it's public URL
+
+{% highlight console %}
 juju expose nginx-passenger
 juju status
 {% endhighlight %}
 
-> You can find more of configuration and deployment options at [Rack Charm page]()
+> You can find more of configuration examples and deployment options at [Rack Charm page](http://jujucharms.com/charms/precise/rack)
 
 ### Links
 - [Juju documentation](https://juju.ubuntu.com/docs/)
