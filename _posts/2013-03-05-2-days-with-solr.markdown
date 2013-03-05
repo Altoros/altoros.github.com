@@ -14,27 +14,27 @@ However database already was quite big (300k records for indexing) and reindex t
 I decided to investigate problem.
 
 <!-- full start -->
-After reading [hathitrust.org](http://www.hathitrust.org/blogs/large-scale-search/forty-days-and-forty-nights-re-indexing-7-million-books-part-1) I uncommented mergeScheduler in solr/conf/solrconfig.xml, set ramBufferSizeMB to 960, mergeFactor to 40 and termIndexInterval to 1024.
+After reading [hathitrust.org](http://www.hathitrust.org/blogs/large-scale-search/forty-days-and-forty-nights-re-indexing-7-million-books-part-1) I uncommented `mergeScheduler` in solr/conf/solrconfig.xml, set `ramBufferSizeMB` to 960, `mergeFactor` to 40 and `termIndexInterval` to 1024.
 But it didn't increase speed at all.
 I checked how busy was my virtual machine. There was about 50% free memory and CPU was loaded with 100%.
 After adding 2 more cores to CPU it used in average 33% of each core :)
 
 After that I started investigating possible options for indexing.
-First option is batch_size. There are a lot of suggestions to increase it to 1000 (no more because of java garbage collector).
+First option is `batch_size`. There are a lot of suggestions to increase it to 1000 (no more because of java garbage collector).
 But task `rake sunspot:solr:reindex[1000]` still worked slowly.
 I tried to run indexing from console `Model.solr_reindex(:batch_size => 1000)` and it took less time than rake task!
 
-I have found 2 more interesting options: include and batch_commit.
+I have found 2 more interesting options: `include` and `batch_commit`.
 Include allow to select from db same batch of rows as you defined to avoid n+1 problem.
-batch_size index all rows at once and after that commit it.
-Using include and butch_size I got much more better results.
+`batch_size` index all rows at once and after that commit it.
+Using include and `batch_size` I got much more better results.
 I created rake task that reindex all my models using discovered options and got speed ~750 record per second.
 
-But it was still strange for me why rake task worked so slow. After looking into namespace :sunspot it became obvious.
+But it was still strange for me why rake task worked so slow. After looking into namespace `:sunspot` it became obvious.
 `sunspot:solr:reindex` is deprecated task and it just run `sunspot:reindex` without any options.
-Ok. I have found how to pass batch_size. But how to pass include and batch_commit?
+Ok. I have found how to pass `batch_size`. But how to pass include and `batch_commit`?
 
-Fortunately sunspot_solr and sunspot_rails was recently updated and they already realized passing include from method `searchable` in model and they hardcoded batch_commit to false.
+Fortunately sunspot_solr and sunspot_rails was recently updated and they already realized passing include from method `searchable` in model and they hardcoded `batch_commit` to `false`.
 I started from 80/s and by this moment I got ~1100/s.
 
 New error I got was ``undefined method `closed?' for nil:NilClass``.
@@ -45,9 +45,9 @@ There is just one small issue with speed decrease [github.com](https://github.co
 
 ## Conclusion
 
-* uncomment mergeScheduler in solr/conf/solrconfig.xml, set ramBufferSizeMB to 960, mergeFactor to 40 and termIndexInterval to 1024
+* uncomment `mergeScheduler` in solr/conf/solrconfig.xml, set `ramBufferSizeMB` to 960, `mergeFactor` to 40 and `termIndexInterval` to 1024
 * use latest version of ruby and gems
 * use rake task correctly `rake sunspot:reindex[1000]`
-* define related tables in your models using :include
-* remember that method "searchable" accept a lot of interesting options that can speed up you application like `if`, `unless`, `ignore_attribute_changes_of`, `only_reindex_attribute_changes_of`, …
+* define related tables in your models using `:include`
+* remember that method "searchable" accept a lot of interesting options that can speed up you application like `if`, `unless`, `ignore_attribute_changes_of`, `only_reindex_attribute_changes_of`, ...
 <!-- full end -->
