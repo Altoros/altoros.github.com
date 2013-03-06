@@ -1,27 +1,17 @@
 ---
 layout: post
-title: News from Twitter
-description: Warning about changes on Twitter API
+title: Simple short url's
+description: Making simply short url's
 author:
   name: Nikolai Sharangovich
   link: https://github.com/Sharangovich
 ---
 
-Warning about changes on Twitter API. And small bicycle for the popular short url's.
+Making simply short url's
 
 <!-- full start -->
 
-## Warning
-
-If one of your projects uses Twitter API, you should put your attention to news about authorization and API changes. For now Twitter uses OAuth 1.0 & OAuth 1.0 Reviosion A authorization protocols, but since march 5th support of first one was canceled. Main difference between protocols — in new version user authorithation is required. So if you use some features without user authorization, like a search, after cancelling of OAuth 1.0 you will lose this posibility. 
-Also, important changes can be found on new API 1.1. One of them — new tweets search pagination. They changed cardinally. Used 'tweets count' and 'last tweet id' instead of page number.
-
-> It's time to verify that everything up to date and works correctly!
-
-
-## Bonus
-
-Also, i can share with you some bicycle. If you need to use short links, but you can't use side solution and has own short domain, you can do something like that. Make own url shorter.
+I want to share with you an idea, how to reinvent the wheel, if you need short url, but you can't use side solutions (like goo.gl, etc) and has own short domain. You can do something like that - make own url shorter.
 First we need to create a model with destination path and params fields and appropriate controller. After that, we can route 
 {% highlight ruby %}
 get '/:id' => 'short_url#show'
@@ -125,5 +115,4 @@ the result should be something like this:
 
 <!-- full end -->
 
-[0]: https://dev.twitter.com/docs/api/1.1/overview
-[1]: http://en.wikipedia.org/wiki/Base64
+[0]: http://en.wikipedia.org/wiki/Base64
