@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Simple short url's
-description: Making simply short url's
+title: Simple short urls
+description: Making simply short urls
 author:
   name: Nikolai Sharangovich
   link: https://github.com/Sharangovich
 ---
 
-Making simply short url's
+Making simply short urls
 
 <!-- full start -->
 
@@ -16,7 +16,7 @@ First we need to create a model with destination path and params fields and appr
 {% highlight ruby %}
 get '/:id' => 'short_url#show'
 {% endhighlight %}
-And make a redirect to needed path with saved params. But if you need to create a very short, for Tweet for example, the digitally ':id' can eat too much symbols in result url. To make it shorter we can convert ':id' number to a string(what, actualy, url shorters do). I have resolved this issue with a help of Base64 standart. In our case it's just array with able characters to use, and their id's(codes). To convert ':id' number to short string, first we convert it into url safe Base64. This is a code of example ShortUrl model:
+And make a redirect to needed path with saved params. But if you need to create a very short, for Tweet for example, the digitally ':id' can eat too much symbols in result url. To make it shorter we can convert ':id' number to a string(what, actualy, url shorters do). I have resolved this issue with a help of [Base64][0] standart. In our case it's just array with able characters to use, and their id's(codes). To convert ':id' number to short string, first we convert it into url safe Base64. This is a code of example ShortUrl model:
 
 {% highlight ruby %}
 class ShortUrl < ActiveRecord::Base
@@ -104,7 +104,7 @@ pry(main)> ShortUrl.decode "sFFFFF"
 => 85217605
 {% endhighlight %}
 
-So, you can generate short url's:
+So, you can generate short urls:
 {% highlight ruby %}
 ShortUrl.generate(edit_user_path(@screener), reply_to: reply_to)
 {% endhighlight %}
