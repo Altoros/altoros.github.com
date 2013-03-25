@@ -20,7 +20,7 @@ Before we go, for any feedback on that list use that mail:
 spiderman_doesnt_give_a[something like web here or just an "at" sign]theresnosuchmail.com  
 So, let us see the list of coolest Hardcore extension methods.
 
-## extract_options!(), [Array][0]
+## [extract_options!(), Array][0]
 This method removes last element of array if it's a hash and returns it.
 If there's no such element - it returns an empty hash.
 
@@ -30,7 +30,7 @@ def spin_the_web(*args)
 end
 
 spin_the_web(:all_around)   # => {}
-spin_the_web(:all_around, stickiness: :average:)   # => {:stickiness=>:average}
+spin_the_web(:all_around, stickiness: => :average)  # => {:stickiness=>:average}
 {% endhighlight %}
 
 It can be used, for example, in methods with a variable number of arguments and * in its declaration,
@@ -38,7 +38,7 @@ so you can easily separate array of parameters and options hash.
 
 ![How do i shoot?][7]
 
-## try(*args, &block), [Object][0]
+## [try(*args, &block), Object][1]
 So, you want to check if there's an instance variable and call a method on it. Without a try method it looks like this:
 
 {% highlight ruby %}
@@ -56,7 +56,7 @@ You can pass arguments to method after its name (just like you do for public_sen
 
 ![You can't fail if you don't try][8]
 
-## delegate(*methods), [Class][0]
+## [delegate(*methods), Class][2]
 Let's start with an example:
 
 {% highlight ruby %}
@@ -84,7 +84,7 @@ There's no need to be charming like a Spiderman to use that method.
 
 ![Hay][9]
 
-## sum(identity = 0, &block), [Enumerable][3]
+## [sum(identity = 0, &block), Enumerable][3]
 After a hard day, Spiderman needs to calculate the total price of things he 'expropriated'.
 He can do this with a sum method (if he has a PC nearby, of course):
 
@@ -99,8 +99,8 @@ Also, you can call it with a block (for example, to calculate sum for some attri
 
 ![Orphans][10]
 
-## diff(another_hash), [Hash][4]
-You can easily determine difference between superheroes and villains, by using diff method:
+## [diff(another_hash), Hash][4]
+You can easily determine difference between superheroes and villains by using diff method:
 
 {% highlight ruby %}
 spiderman = {
@@ -122,12 +122,12 @@ spiderman.diff(dr_octopus)   # => {:wears_glasses=>false}
 
 As you can see, there's much difference here.
 So, duplicated key-value pairs do not belong to result.
-If there are different values and the same key value from receiver goes to result.
+If there are different values and the same key, value from receiver goes to result.
 The rest is just merged.
 
 ![Bank robbery][11]
 
-## except(*keys), [Hash][5]
+## [except(*keys), Hash][5]
 
 To get a part of some hash use except method.
 
@@ -142,10 +142,10 @@ peter_parker = spiderman.except(:superpowers, :latex_costume)   # => {:camera=>t
 {% endhighlight %}
 
 That's the proof of Peter Parker being naked photograph without superpowers.
-(Sorry, cant post image due with unacceptable content)
+(Sorry, I can't post image with unacceptable content)
 
 Original except method doesn't remove values from receiver.
-However, it has bang version which does.
+However, it has a bang version which does.
 
 [0]: http://apidock.com/rails/Array/extract_options%21
 [1]: http://apidock.com/rails/Object/try
