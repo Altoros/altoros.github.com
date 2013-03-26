@@ -9,9 +9,9 @@ author:
 
 Read the one and only Spiderman's cheat sheet about Rails core extension methods (images included)
 
-![Monday Meme][6]
-
 <!-- full start -->
+
+![Monday Meme][6]
 
 Spiderman is on duty every day (except Sunday, maybe). The thing is - he finds time to develop Rails applications. So, I have a friend of a friend with a friend knowing some random person
 who asked Spiderman about his favourite core extension methods. The first thing Spiderman told: 'Dude, call them Hardcore extension methods'.
@@ -146,6 +146,8 @@ That's the proof of Peter Parker being naked photograph without superpowers.
 
 Original except method doesn't remove values from receiver.
 However, it has a bang version which does.
+
+<!-- full end -->
 
 [0]: http://apidock.com/rails/Array/extract_options%21
 [1]: http://apidock.com/rails/Object/try
