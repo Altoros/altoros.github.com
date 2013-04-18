@@ -8,7 +8,10 @@ author:
 ---
 This is cross-post from [Railsguides blogs](http://railsguides.net/2013/04/18/accessible-resources-list/).
 
-Imagine that we have *Trademarks* controller with *index* action. But in this action we shouldn't get all trademarks. Rather than all objects we have to get all trademarks which are accessible by current user only. This is a challenge which I'm going to solve here.
+Imagine that we have `Trademarks` controller with `index` action. But
+in this action we shouldn't get all trademarks. Rather than all
+objects we have to get all trademarks which are accessible by current
+user only. This is a challenge which I'm going to solve here.
 
 <!-- full start -->
 
@@ -34,15 +37,24 @@ class TrademarksController < ApplicationController
 end
 {% endhighlight %}
 
-Of course we can define here scope on the *Trademark* model but this will not save us from changes in the controller - we still has chance to edit index action in the feature. For example, we would have to combine two scopes there.
+Of course we can define here scope on the `Trademark` model but this
+will not save us from changes in the controller -- we still has chance
+to edit index action in the feature. For example, we would have to
+combine two scopes there.
 
 ## DRY solution
 
-There is a better solution which can help us to avoid these repetitive task. But this solution is achieved by installing the *cancan* gem. I hope you don't hate this gem and able to add it to the project.
+There is a better solution which can help us to avoid these repetitive
+task. But this solution is achieved by installing the `cancan` gem. I
+hope you don't hate this gem and able to add it to the project.
 
-So, the first step for this solution as you have already guessed will be installing *cancan* - add it to the *Gemfile* and install it running *bundle install* command in your terminal. Initialize it with *rails g cancan:ability*.
+So, the first step for this solution as you have already guessed will
+be installing `cancan` -- add it to the `Gemfile` and install it
+running `bundle install` command in your terminal. Initialize it with
+`rails g cancan:ability`.
 
-Open */app/models/ability.rb* file and define there abilities. Let's do it:
+Open `/app/models/ability.rb` file and define there abilities. Let's
+do it:
 
 
 {% highlight ruby %}
@@ -56,7 +68,8 @@ class Ability
 end
 {% endhighlight %}
 
-Currently we are on the last step. We have to refactor controller now - use *accessible_by* method which is provided by *cancan*:
+Currently we are on the last step. We have to refactor controller now
+-- use `accessible_by` method which is provided by `cancan`:
 
 {% highlight ruby %}
 class TrademarksController < ApplicationController
@@ -66,7 +79,7 @@ class TrademarksController < ApplicationController
 end
 {% endhighlight %}
 
-Implementation of the *accessible_by* method is too simple:
+Implementation of the `accessible_by` method is too simple:
 
 {% highlight ruby %}
 def accessible_by(ability, action = :index)
@@ -74,13 +87,19 @@ def accessible_by(ability, action = :index)
 end
 {% endhighlight %}
 
-It just fetches records from the database according specified scopes in the abilities. Pay attention that you are able to pass any action here, not only index action as I did.
+It just fetches records from the database according specified scopes
+in the abilities. Pay attention that you are able to pass any action
+here, not only index action as I did.
 
-Here we are. The code in the controller's action won't be changed so often as it was before. I think, that we reduced possibility to changes for this action as far as possible.
+Here we are. The code in the controller's action won't be changed so
+often as it was before. I think, that we reduced possibility to
+changes for this action as far as possible.
 
-There is an one constraint here - you are not able to use abilities which are defined with blocks (please, read this [doc](https://github.
+There is an one constraint here - you are not able to use abilities
+which are defined with blocks (please, read this [doc](https://github.
 com/ryanb/cancan/wiki/Defining-Abilities-with-Blocks) how to define abilities).
 
-Fetching Records technique documentation is described [here](https://github.com/ryanb/cancan/wiki/Fetching-Records).
+Fetching Records technique documentation is described
+[here](https://github.com/ryanb/cancan/wiki/Fetching-Records).
 
 <!-- full end -->
