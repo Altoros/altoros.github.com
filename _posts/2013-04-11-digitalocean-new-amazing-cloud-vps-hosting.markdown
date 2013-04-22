@@ -47,6 +47,6 @@ In case something happened they promise credit account according to amount of ti
 Of course the have [status page](http://www.digitaloceanstatus.com/).
 
 ## Customers.
-jsFiddle already [moved](https://www.digitalocean.com/blog_posts/jsfiddle-net-moves-to-digitalocean) to DigitalOcean.
-May now is you turn?
+[jsFiddle](https://www.digitalocean.com/blog_posts/jsfiddle-net-moves-to-digitalocean) and [railscasts.com](http://railscasts.com/announcements/7) already moved to DigitalOcean.
+May be now is you turn?
 <!-- full end -->
