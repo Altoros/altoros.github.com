@@ -6,5 +6,4 @@ permalink: '/:year/:title'
 pygments: true
 markdown: rdiscount
 rdiscount:
-  extensions:
-    - :autolink
+  extensions: [autolink]
