@@ -12,7 +12,7 @@ In this article I would like to tell about some [RSpec](https://github.com/rspec
 
 <!-- full start -->
 
-## **your tests as specification (really)**
+## your tests as specification (really)
 
 I really fond of tests which can be read as short documentation, which expose the application API. To help you to cope with it, run your specs with `--format d[ocumentation]` option.
 Output will be printed in nested way; if you don't understand what your code can do, you should rewrite your tests.
@@ -25,7 +25,7 @@ In order to not write rspec options everytime when running specs, create `.rspec
 {% endhighlight %}
 
 
-## **flavour of the RSpec’s built-in expectations**
+## flavour of the RSpec’s built-in expectations
 
 * avoid use of `!=`, remember about `should_not`
 * to test `actual.predicate?` methods, use `actual.should be_[predicate]`.
@@ -45,7 +45,7 @@ In order to not write rspec options everytime when running specs, create `.rspec
   {% endhighlight %}
 
 
-## **mock_model vs. stub_model**
+## mock_model vs. stub_model
 
 By default, `mock_model` produces a mock that acts like an existing record (`persisted()` returns true).
 The `stub_model` method is similar to `mock_model` except that it creates an actual instance of the model. This requires that the model has a corresponding table in the database. So, the main advantage is obvious, tests, that was written using `mock_model`, will run faster.
@@ -76,7 +76,7 @@ end
 {% endhighlight %}
 
 
-## **subject and it {}**
+## subject and it {}
 
 In an example group, you can use the `subject` method to define an explicit subject for testing by passing it a block.
 Now you can use `it {}` constructions to specify matchers. It's just concise!
@@ -116,7 +116,7 @@ end
 {% endhighlight %}
 
 
-## **DRY!ness**
+## DRY!ness
 
 There are 2 strategies to share the same data among different examples.
 They are
