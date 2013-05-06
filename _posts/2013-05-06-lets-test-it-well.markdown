@@ -14,9 +14,16 @@ In this article I would like to tell about some [RSpec](https://github.com/rspec
 
 ## your tests as specification (really)
 
-I really fond of tests which can be read as short documentation, which expose the application API. To help you to cope with it, run your specs with `--format d[ocumentation]` option.
-Output will be printed in nested way; if you don't understand what your code can do, you should rewrite your tests.
-In order to not write rspec options everytime when running specs, create `.rspec` configuration file in your home directory or application directory. (Options that are stored in `./.rspec` take  precedence over options stored in `~/.rspec`, and any options declared directly on the command line will take precedence over those in either file.)
+I really fond of tests which can be read as short documentation, which
+expose the application API. To help you to cope with it, run your
+specs with `--format d[ocumentation]` option. Output will be printed
+in nested way; if you don't understand what your code can do, you
+should rewrite your tests. In order to not write rspec options
+everytime when running specs, create `.rspec` configuration file in
+your home directory or application directory. (Options that are stored
+in `./.rspec` take  precedence over options stored in `~/.rspec`, and
+any options declared directly on the command line will take precedence
+over those in either file.)
 
 > .rspec file
 {% highlight ruby %}
@@ -28,28 +35,36 @@ In order to not write rspec options everytime when running specs, create `.rspec
 ## flavour of the RSpec’s built-in expectations
 
 * avoid use of `!=`, remember about `should_not`
+
 * to test `actual.predicate?` methods, use `actual.should be_[predicate]`.
-  {% highlight ruby %}
-  actual.should be_true  # passes if actual is truthy (not nil or false)
-  actual.should be_false # passes if actual is falsy (nil or false)
-  actual.should be_nil   # passes if actual is nil
-  actual.should be       # passes if actual is truthy (not nil or false)
-  {% endhighlight %}
+{% highlight ruby %}
+actual.should be_true  # passes if actual is truthy (not nil or false)
+actual.should be_false # passes if actual is falsy (nil or false)
+actual.should be_nil   # passes if actual is nil
+actual.should be       # passes if actual is truthy (not nil or false)
+{% endhighlight %}
+
 * use collection's matchers
-  {% highlight ruby %}
-  actual.should include(expected)
-  actual.should have(n).items
-  actual.should have_exactly(n).items
-  actual.should have_at_least(n).items
-  actual.should have_at_most(n).items
-  {% endhighlight %}
+{% highlight ruby %}
+actual.should include(expected)
+actual.should have(n).items
+actual.should have_exactly(n).items
+actual.should have_at_least(n).items
+actual.should have_at_most(n).items
+{% endhighlight %}
 
 
 ## mock_model vs. stub_model
 
-By default, `mock_model` produces a mock that acts like an existing record (`persisted()` returns true).
-The `stub_model` method is similar to `mock_model` except that it creates an actual instance of the model. This requires that the model has a corresponding table in the database. So, the main advantage is obvious, tests, that was written using `mock_model`, will run faster.
-The another advantage of `mock_model` over `stub_model` is that it's a true double, so the examples are not dependent on the behaviour (or mis-behaviour), or even the existence of any other code.
+By default, `mock_model` produces a mock that acts like an existing
+record (`persisted()` returns true). The `stub_model` method is
+similar to `mock_model` except that it creates an actual instance of
+the model. This requires that the model has a corresponding table in
+the database. So, the main advantage is obvious, tests, that was
+written using `mock_model`, will run faster. The another advantage of
+`mock_model` over `stub_model` is that it's a true double, so the
+examples are not dependent on the behaviour (or mis-behaviour), or
+even the existence of any other code.
 
 > Use of `mock_model` method is quite simple:
 {% highlight ruby %}
@@ -78,8 +93,10 @@ end
 
 ## subject and it {}
 
-In an example group, you can use the `subject` method to define an explicit subject for testing by passing it a block.
-Now you can use `it {}` constructions to specify matchers. It's just concise!
+In an example group, you can use the `subject` method to define an
+explicit subject for testing by passing it a block. Now you can use
+`it {}` constructions to specify matchers. It's just concise!
+
 {% highlight ruby %}
 describe AccountProcessing do
   include_context :oauth_hash
@@ -118,59 +135,64 @@ end
 
 ## DRY!ness
 
-There are 2 strategies to share the same data among different examples.
-They are
+There are 2 strategies to share the same data among different
+examples.
 
-* shared context
+### shared context
 
-Use `shared_context` to define a block that will be evaluated in the context of example groups using `include_context`.
-You can put settings(something in the `before`/`after` block), variables, data, methods. All things you put into `shared_contex` will be accessible in the example group by name.
+Use `shared_context` to define a block that will be evaluated in the
+context of example groups using `include_context`. You can put
+settings(something in the `before`/`after` block), variables, data,
+methods. All things you put into `shared_contex` will be accessible in
+the example group by name.
 
 > Defining `shared_context`:
-  {% highlight ruby %}
-  shared_context "shared_data" do
-    before { @some_var = :some_value }
+{% highlight ruby %}
+shared_context "shared_data" do
+  before { @some_var = :some_value }
 
-    def shared_method
-      "it works"
-    end
-
-    let(:shared_let) { {'arbitrary' => 'object'} }
-
-    subject do
-      'this is the shared subject'
-    end
+  def shared_method
+    "it works"
   end
-  {% endhighlight %}
+
+  let(:shared_let) { {'arbitrary' => 'object'} }
+
+  subject do
+    'this is the shared subject'
+  end
+end
+{% endhighlight %}
 
 > Using `shared_context`:
-  {% highlight ruby %}
-  require "./shared_data.rb"
+{% highlight ruby %}
+require "./shared_data.rb"
 
-  describe "group that includes a shared context using 'include_context'" do
-    include_context :shared_data
+describe "group that includes a shared context using 'include_context'" do
+  include_context :shared_data
 
-    it "has access to methods defined in shared context" do
-      shared_method.should eq("it works")
-    end
-
-    it "has access to methods defined with let in shared context" do
-      shared_let['arbitrary'].should eq('object')
-    end
-
-    it "runs the before hooks defined in the shared context" do
-      @some_var.should be(:some_value)
-    end
-
-    it "accesses the subject defined in the shared context" do
-      subject.should eq('this is the shared subject')
-    end
+  it "has access to methods defined in shared context" do
+    shared_method.should eq("it works")
   end
-  {% endhighlight %}
 
-* shared examples
+  it "has access to methods defined with let in shared context" do
+    shared_let['arbitrary'].should eq('object')
+  end
 
-Shared examples used to describe a common behaviour and encapsulate it into one example group. Then examples can be applied to another example group.
+  it "runs the before hooks defined in the shared context" do
+    @some_var.should be(:some_value)
+  end
+
+  it "accesses the subject defined in the shared context" do
+    subject.should eq('this is the shared subject')
+  end
+end
+{% endhighlight %}
+
+### shared examples
+
+Shared examples used to describe a common behaviour and encapsulate it
+into one example group. Then examples can be applied to another
+example group.
 
 > Defining `shared_examples`:
 {% highlight ruby %}
@@ -220,4 +242,3 @@ end
 * book by RSpec's creator David Chelimsky ["The RSpec Book"](http://pragprog.com/book/achbd/the-rspec-book)
 
 <!-- full end -->
-

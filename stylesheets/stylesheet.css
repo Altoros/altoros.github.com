@@ -479,27 +479,8 @@ p, ul, ol, table, pre, dl {
   margin: 0 0 20px;
 }
 
-h1, h2, h3 {
-  line-height: 1.1;
-}
-
-h1 {
-  font-size: 28px;
-}
-
-h2 {
-  font-size: 24px;
-}
-
-h3 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: normal;
-}
-
 a {
   color: #600;
-  font-weight: 400;
   text-decoration: none;
 }
 a:hover {
@@ -592,8 +573,7 @@ section #title {
   padding: 0 0 5px 0;
 }
 section #title h1 {
-  font-weight: normal;
-  font-size: 40px;
+  font-size: 42px;
   text-align: center;
   line-height: 36px;
 }
@@ -657,6 +637,10 @@ section #title .credits.right {
 
 .page {
   margin-top: 3em;
+}
+
+#page_contents pre {
+  border: 1px dotted gray;
 }
 
 @media print {
