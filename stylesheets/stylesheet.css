@@ -472,7 +472,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: #000;
   margin: 0 0 10px;
-  font-weight: normal;
+  font-weight: bold;
 }
 
 p, ul, ol, table, pre, dl {
