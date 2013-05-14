@@ -4,49 +4,38 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/pygments.css" media="screen" />
     <link rel="alternate" href="http://feeds.feedburner.com/altoros-team" title="Altoros Team" type="application/atom+xml" />
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
     <title>{{page.title}}</title>
   </head>
 
   <body>
-    <header>
-      <div class="inner">
-        <h1><a href="{{ site.url }}">Altoros Team</a></h1>
-        <h2>Dir["notes/*"].each{|nn| puts File.read(nn)}</h2>
-        <a href="https://github.com/Altoros" class="button"><small>Find us on</small>GitHub</a>
-      </div>
-    </header>
+    <div class="wrapper">
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          {{content}}
-        </section>
+      <section>
+        <div id="title">
+          <h1><a href="{{ site.url }}">Altoros Team</a></h1>
+          <pre>Dir["notes/*"].each{|nn| puts File.read(nn)}</pre>
+          <hr>
+          <span class="credits left">Written by <a href="https://github.com/Altoros">altoros</a></span>
+          <span class="credits right">Subscribe to <a href="http://feeds.feedburner.com/altoros-team">Atom feed</a>. Follow us on twitter <a href="https://twitter.com/altoros">@altoros</a></span>
+        </div>
+        {{content}}
+      </section>
 
-        <aside id="sidebar">
-          <p>Follow us on twitter <a href="https://twitter.com/altoros">@altoros</a></p>
-          <p>Subscribe to <a href="http://feeds.feedburner.com/altoros-team">Atom feed</a></p>
-          <p>Have some thoughts to share? This blog is open! Read about <a href="https://github.com/Altoros/altoros.github.com/blob/master/CONTRIBUTING.markdown">how to contribute</a>.
+      <hr>
+      <footer>
+        <p>Have some thoughts to share? This blog is open! Read about <a href="https://github.com/Altoros/altoros.github.com/blob/master/CONTRIBUTING.markdown">how to contribute</a>.
           {% if site.posts != empty %}
-            <ul>
-              Recent posts
-              {% for page in site.posts | sort: 'date' | sort: 'url' %}
-              <li><a href="{{page.url}}" rel="bookmark">{{page.title}}</a></li>
-              {% endfor %}
-            </ul>
+          <ul>
+            {% for page in site.posts | sort: 'date' | sort: 'url' %}
+            <li><a href="{{page.url}}" rel="bookmark">{{page.title}}</a></li>
+            {% endfor %}
+          </ul>
           {% endif %}
-        </aside>
+        </footer>
       </div>
-    </div>
 
     <script type="text/javascript">
     if (document.location.host != 'localhost') {

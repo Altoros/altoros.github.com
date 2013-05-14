@@ -4,6 +4,7 @@ title: Websocket-Rails Gem
 description: Easy to get started websocket gem for rich Rails application. 
 author:
   name: Dmitry Savitski
+  link: https://github.com/MrDominusNox
 ---
 
 I'd like you to look at the relatively new project here on Github,

@@ -1,9 +1,9 @@
+safe: true
+lsi: false
 paginate: 5
-url: 'http://altoros.github.com'
+url: 'http://altoros.github.io'
 permalink: '/:year/:title'
 pygments: true
 markdown: rdiscount
 rdiscount:
-  extensions:
-    - :smart
-    - :autolink
+  extensions: [smart, autolink]
