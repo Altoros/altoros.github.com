@@ -481,10 +481,6 @@ p, ul, ol, table, pre, dl {
 
 a {
   color: #600;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
 }
 
 a small {
