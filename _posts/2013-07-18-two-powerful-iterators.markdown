@@ -1,16 +1,24 @@
-Two (or three) powerful iterators
-=================================
+---
+layout: post
+title: Two (or three) powerful iterators
+description: Two Ruby iterator methods I really love, thanks to its simplicity and beauty
+author:
+  name: Emiliano Coppo
+  link: https://github.com/bismark64
+---
 
 If you have some experience working with Ruby you probably had to deal with collections.
 Collections can be tedious. But TTR (Thanks To Ruby) we have a large arsenal to deal with them!
 
 In this post I'll show you two Ruby iterator methods I really love, thanks to its simplicity and beauty.
 
+<!-- full start -->
+
 My whimsical example
 --------------------
 
 Recently I had to make an small JSON parser of the Flickr public feed, so I'll use some methods of that module as examples for our post.
-Basically, the module had to fetch a JSON object returned by the Flickr API and parse it to a Ruby JSON object checking some validations. 
+Basically, the module had to fetch a JSON object returned by the Flickr API and parse it to a Ruby JSON object checking some validations.
 This kind of functionality doesn't take more than a dozen of Ruby lines, but it's a good example to achieve our goal.
 
 We'll focus on two methods of the module:
@@ -26,20 +34,20 @@ A valid approach could look like this:
     def check(item)
       new_item = {}
       item.each do |key, value|
-        new_item[key] = value.empty? ? "No data" : value 
+        new_item[key] = value.empty? ? "No data" : value
       end
       new_item
     end
 
 This code certainly works, but also it also have some design issues like a temp (and unnecessary) hash.
 
-As Ruby developers we should to take care of the Ruby API in this cases. 
+As Ruby developers we should to take care of the Ruby API in this cases.
 The bellow code can be good as a start point, but it does not take long to realize that it smells..
 So if we look at the Hash doc we can find an alternative (and prettier) solution with the [update](http://www.ruby-doc.org/core-2.0/Hash.html#method-i-update) method:
 
     def check(item)
       item.update(item) do |key, value|
-        value.empty? ? "No data" : value 
+        value.empty? ? "No data" : value
       end
     end
 
@@ -91,7 +99,7 @@ This can be done more concisely with inject:
 
 As its name suggest inject "injects" an initial object (0.0 in the above example) and uses it as the initial value of the "memo" (result in the code), then iterates the given block like the each method does.
 Inject is very flexible, if you do not explicitly specify an initial value in the inject, then the first element of collection is used as the initial value.
-    
+
     def sum
       (1..10).inject{ |sum, n| sum + n }  #returns 55 (= 1+2+...+10)
     end
@@ -128,4 +136,6 @@ Hash Update: http://apidock.com/ruby/Hash/update, http://www.ruby-doc.org/core-2
 
 Enumerable Inject: http://apidock.com/ruby/Enumerable/inject
 
-Thanks to @avsej and @wacko for your suggestions and tips..
+Thanks to [@avsej](https://github.com/avsej) and [@wacko](https://github.com/wacko) for your suggestions and tips..
+
+<!-- full end -->
