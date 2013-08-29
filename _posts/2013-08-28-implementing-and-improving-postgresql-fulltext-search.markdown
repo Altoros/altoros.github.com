@@ -68,8 +68,7 @@ pg_search_scope :search,
                   tsearch: {
                     dictionary: 'english',
                     any_word: true,
-                    prefix: true,
-                    tsvector_column: 'search_vector'
+                    prefix: true
                   }
                 }
 {% endhighlight %}
@@ -78,13 +77,13 @@ And then you can perform search using Article.search method:
 
 {% highlight ruby %}
 irb(main):011:0> Article.search('title')
-=> [#<Article id: 3, author_id: 1, title: "title", content: "this is content", created_at: "2013-08-26 10:09:01", updated_at: "2013-08-27 07:00:18", search_vector: "'astraukh':6B 'best':24B 'bitch':16B 'comment':9B '...">]
+=> [#<Article id: 3, author_id: 1, title: "title", content: "this is content", created_at: "2013-08-26 10:09:01", updated_at: "2013-08-27 07:00:18">]
 {% endhighlight %}
 
 Hooray, it found Article by word 'title'! But if you look at query:
 
 {% highlight ruby %}
-Article Load (1.8ms)  SELECT "articles".*, ((ts_rank(("articles"."search_vector"), (to_tsquery('english', ''' ' || 'title' || ' ''' || ':*')), 0))) AS pg_search_rank FROM "articles" LEFT OUTER JOIN (SELECT "articles"."id" AS id, string_agg("authors"."name"::text, ' ') AS pg_search_a612c20e7f822205b5b540 FROM "articles" INNER JOIN "authors" ON "authors"."id" = "articles"."author_id" GROUP BY "articles"."id") pg_search_1eb533ea18bbbe0846ef24 ON pg_search_1eb533ea18bbbe0846ef24.id = "articles"."id" LEFT OUTER JOIN (SELECT "articles"."id" AS id, string_agg("comments"."content"::text, ' ') AS pg_search_6e76a7a40d9cb3861e7fb2 FROM "articles" INNER JOIN "comments" ON "comments"."article_id" = "articles"."id" GROUP BY "articles"."id") pg_search_121ea89914a721445aee70 ON pg_search_121ea89914a721445aee70.id = "articles"."id" WHERE ((("articles"."search_vector") @@ (to_tsquery('english', ''' ' || 'title' || ' ''' || ':*')))) ORDER BY pg_search_rank DESC, "articles"."id" ASC
+Article Load (1.9ms)  SELECT "articles".*, ((ts_rank((to_tsvector('simple', coalesce("articles"."title"::text, '')) || to_tsvector('simple', coalesce("articles"."content"::text, '')) || to_tsvector('simple', coalesce(pg_search_1eb533ea18bbbe0846ef24.pg_search_a612c20e7f822205b5b540::text, '')) || to_tsvector('simple', coalesce(pg_search_121ea89914a721445aee70.pg_search_6e76a7a40d9cb3861e7fb2::text, ''))), (to_tsquery('simple', ''' ' || 'title' || ' ''')), 0))) AS pg_search_rank FROM "articles" LEFT OUTER JOIN (SELECT "articles"."id" AS id, string_agg("authors"."name"::text, ' ') AS pg_search_a612c20e7f822205b5b540 FROM "articles" INNER JOIN "authors" ON "authors"."id" = "articles"."author_id" GROUP BY "articles"."id") pg_search_1eb533ea18bbbe0846ef24 ON pg_search_1eb533ea18bbbe0846ef24.id = "articles"."id" LEFT OUTER JOIN (SELECT "articles"."id" AS id, string_agg("comments"."content"::text, ' ') AS pg_search_6e76a7a40d9cb3861e7fb2 FROM "articles" INNER JOIN "comments" ON "comments"."article_id" = "articles"."id" GROUP BY "articles"."id") pg_search_121ea89914a721445aee70 ON pg_search_121ea89914a721445aee70.id = "articles"."id" WHERE (((to_tsvector('simple', coalesce("articles"."title"::text, '')) || to_tsvector('simple', coalesce("articles"."content"::text, '')) || to_tsvector('simple', coalesce(pg_search_1eb533ea18bbbe0846ef24.pg_search_a612c20e7f822205b5b540::text, '')) || to_tsvector('simple', coalesce(pg_search_121ea89914a721445aee70.pg_search_6e76a7a40d9cb3861e7fb2::text, ''))) @@ (to_tsquery('simple', ''' ' || 'title' || ' ''')))) ORDER BY pg_search_rank DESC, "articles"."id" ASC
 {% endhighlight %}
 
 you will see that it have several joins which is not good because it greatly slows performance. I will show you how to avoid this behavior and
