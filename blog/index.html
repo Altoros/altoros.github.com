@@ -1,0 +1,35 @@
+---
+layout: site
+title: Altoros Team
+---
+<nav>
+  <ul>
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/repo.html">Repositories</a></li>
+    <li><a class="active" href="/blog/index.html">Github Blog</a></li>
+    <li><a href="/contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+<hr>
+{% for page in paginator.posts | sort: 'date' | sort: 'url' %}
+<div class="page">
+  {% include page_meta.html %}
+  <div class="page_contents">
+    {{ page.content | replace:'full start -->','' | replace:'<!-- full end','' }}
+  </div>
+  {% include social_links.html %}
+  <a href="{{page.url}}" class="more" rel="bookmark" title="Permalink to {{page.title}}">Continue reading this post</a>
+</div>
+{% endfor %}
+
+{% if paginator.page and paginator.total_pages > 1 %}
+  <div class="pagination">
+    <span class="page_number ">Page: {{paginator.page}} of {{paginator.total_pages}}</span>
+    {% if paginator.previous_page %}
+      <a href="{{paginator.previous_page_path}}" class="previous">Previous</a>
+    {% endif %}
+    {% if paginator.next_page %}
+      <a href="{{paginator.next_page_path}}" class="next">Next</a>
+    {% endif %}
+  </div>
+{% endif %}

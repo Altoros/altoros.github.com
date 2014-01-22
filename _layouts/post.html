@@ -2,10 +2,20 @@
 layout: site
 ---
 
+<nav>
+  <ul>
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/repo.html">Repositories</a></li>
+    <li><a class="active" href="/blog/index.html">Github Blog</a></li>
+    <li><a href="/contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+<hr>
 {% include page_meta.html %}
-<div id="page_contents">
+<div class="page_contents">
   {{ content }}
 </div>
+{% include social_links.html %}
 <div id="disqus_thread"></div>
 <script type="text/javascript">
 var disqus_shortname = 'avsej';
