@@ -2,28 +2,26 @@
 layout: site
 title: Altoros Team
 ---
+<nav>
+  <ul>
+    <li><a class="active" href="/index.html">Home</a></li>
+    <li><a href="/repo.html">Repositories</a></li>
+    <li><a href="/blog/index.html">Github Blog</a></li>
+    <li><a href="/contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+<hr>
+<h2 class="inline">Repositories</h2> <a class="all" href="/repo.html">See all</a>
+<div id="home-github-projects"></div>
 
-{% for page in paginator.posts | sort: 'date' | sort: 'url' %}
+<h2 class="inline">Github Blog</h2> <a class="all" href="/blog/index.html">See all</a>
+{% for page in site.posts | sort: 'date' | sort: 'url' | limit: 2 %}
 <div class="page">
   {% include page_meta.html %}
-  <div id="page_contents">
+  <div class="page_contents">
     {{ page.content | replace:'full start -->','' | replace:'<!-- full end','' }}
   </div>
+  {% include social_links.html %}
+  <a href="{{page.url}}" class="more" rel="bookmark" title="Permalink to {{page.title}}">Continue reading this post</a>
 </div>
 {% endfor %}
-
-{% if paginator.page and paginator.total_pages > 1 %}
-  <div class="pagination">
-    <span class="page_number ">Page: {{paginator.page}} of {{paginator.total_pages}}</span>
-    {% if paginator.previous_page %}
-      {% if paginator.previous_page == 1 %}
-        <a href="/" class="previous">Previous</a>
-      {% else %}
-        <a href="/page{{paginator.previous_page}}" class="previous">Previous</a>
-      {% endif %}
-    {% endif %}
-    {% if paginator.next_page %}
-      <a href="/page{{paginator.next_page}}" class="next">Next</a>
-    {% endif %}
-  </div>
-{% endif %}

@@ -1,17 +1,9 @@
 <div class="social_links">
   <ul>
-    <a href="https://plus.google.com/share?&url={{site.url}}{{page.url}}" target="_blank">
-      <li class="googleplus"></li>
-    </a>
-    <a href="http://www.linkedin.com/shareArticle?mini=true&url={{site.url}}{{page.url}}&title={{page.title}}&summary={{page.summary}}&source=Altoros%20Team" target="_blank">
-      <li class="linkedin"></li>
-    </a>
-    <a href="https://twitter.com/share?url={{site.url}}{{page.url}}&text={{page.title}}" target="_blank">
-      <li class="twitter">
-      </li>
-    </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{site.url}}{{page.url}}"  target="_blank">
-      <li class="facebook"></li>
-    </a>
+    <li class="twitter"><a href="https://twitter.com/share?url={{site.url}}{{page.url}}&text={{page.title}}" target="_blank"><span>Twitter</span></a></li>
+    <li class="linkedin"><a href="http://www.linkedin.com/shareArticle?mini=true&url={{site.url}}{{page.url}}&title={{page.title}}&summary={{page.summary}}&source=Altoros%20Team" target="_blank"><span>Linkedin</span></a></li>
+    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{site.url}}{{page.url}}"  target="_blank"><span>Facebook</span></a></li>
+    <li class="googleplus"><a href="https://plus.google.com/share?&url={{site.url}}{{page.url}}" target="_blank"><span>Google</span></a></li>
+    <li class="scoopit"><a scit-url="{{site.url}}{{page.url}}" onclick=" url = encodeURIComponent(document.location); window.open('https://www.scoop.it/bookmarklet?url=' + url , 'Scoopit', 'status=no,toolbar=no,location=no,width=538,height=670');return false;" scit-position="horizontal" class="scoopit-button sd-button" href="http://www.scoop.it"><span>Scoop</span></a></li>
   </ul>
 </div>
