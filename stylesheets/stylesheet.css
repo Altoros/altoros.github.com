@@ -653,6 +653,15 @@ div.social_links a:active {
   max-width: 700px;
   overflow: auto;
 }
+.page_contents table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.page_contents table td, .page_contents table th {
+  border:1px solid #cccccc;
+  padding: 2px;
+  text-align: left;
+}
 .contacts {
   margin-top: 2em;
   padding-left: 25px;
