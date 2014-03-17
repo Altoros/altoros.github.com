@@ -696,6 +696,11 @@ body > .wrapper {
   background: url(/images/logo-altoros.png) 0 0 no-repeat;
   margin-bottom: 15px;
 }
+.logo a {
+  display: block;
+  width: 176px;
+  height: 33px;
+}
 div.twitter {
   min-height: 16px;
   background: url(/images/ico-twitter.png) 0 4px no-repeat;
@@ -732,6 +737,16 @@ div.linkedin a {
   margin-top: 35px;
 }
 .partners:hover {
+  background-position: 0 0;
+}
+.whitepapers {
+  display: block;
+  width:200px;
+  height: 344px;
+  background: url(/images/bg-whitepapers.png) -200px 0 no-repeat;
+  margin-top: 35px;
+}
+.whitepapers:hover {
   background-position: 0 0;
 }
 section.content {
