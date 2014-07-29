@@ -647,7 +647,9 @@ div.social_links a:active {
 .page_title {
   margin-top: 2em;
 }
-
+.page_contents img {
+  max-width: 710px;
+}
 .page_contents pre {
   border: 1px dotted gray;
   max-width: 700px;
