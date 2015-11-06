@@ -1,0 +1,47 @@
+---
+layout: post
+title: "Love Ruby"
+description: How I realized that I love Ruby
+keywords: ruby, node
+author:
+  name: Eugene Melnikov
+  link: https://github.com/melnikaite
+---
+
+Hi folks
+
+Recently I had a chance to try Node.js and plunge to JS world. For those, who just started knowing Node, but already have Ruby background it might be useful to associate some Ruby packages with Node packages:
+
+Node | Ruby
+--- | ---
+nvm | rvm
+karma | rake
+protractor | rspec + capybara
+npm | bundle
+express | sinatra
+jasmine | rspec
+npmjs.com | rubygems.org
+
+<!-- full start -->
+
+Please don't blame me, it just really rough comparison.
+
+First problem I faced is necessity to restart server after each change. Hopefully I found `nodemon` that solved the issue. In rails it's not necessary at leas for development environmemt.
+
+But soon I had to debug and realized that I need to start server with `--debug` flag + install `node-inspector`, which opens Chrome dev tools with all it's power. It's a big advantage, because you see full source file, can see objects by just hovering mouse on variable and even edit file. But this advantage easily turns into weakness if you fork subprocesses, because you have to pass unique debug port for each fork and because `node-inspector` should be opened for each subprocess on uniq web port. I'd prefer pry or byebug instead.
+
+I could accept this, because it's different technology, but when I tried `Protractor` drove me mad. When I write `browser.pause()` it stops sending commands to selenium and I can open dev tools, but it's late, because I can't check Network tab and I can't proceed with opened dev tools, because on the next step it closes. Adding multiple pauses in test doesn't make any sense, because command `c` is doing next step, but not close debugger to proceed. Even if you type `repl` it's still impossible to check variable in your test, because you are in different fake context. `browser.debugger()` works only if you add `--debug` key in command line and stops at fake context as well.
+I understand that `browser.pause()` is still experimental (too long). But why they can't allow to use simple debugger without any wrappers? It seems `WebdriverIO` allows to debug better. I'm going to try it.
+
+Also I noticed that some package authors create separate repository for `bower` releases. It's strange for me, because `bower.json` can be created in main repository. In Ruby we are not creating separate repository for rubygems. By the way npm recently released new version that allows deduplicate dependencies like. Previously the put all dependencies to folder with package, now all packages in `node_modules` are flatten.
+Updating packages in Ruby also much more simple: `bundle update` instead of `npm update && npm update -g && npm update --dev && bower update`.
+You may noticed that for client side `bundle` replaced with `bower`, but for server side packages they use `npm`. It's because of different types of including packages (AMD, CommonJS, ES). In ruby we have only one. Even if you have in ruby application bower packages you can update them together with ruby gems thanks to `rails-assets.org`.
+It's also funny to see that `bower.io` bought expensive domain, but can't afford more stable hosting. I saw several time that search packages is down. I've never seen rubygems.org down.
+
+To get file via http you need to install special request parser, e.g. `multiparty`. But then you can work with file like in Rails.
+
+In node some async functions are duplicated with sync analog. It's very useful, because in tests you most likely will use sync analog, but in application you may consider async function to speed up response. Unfortunately not all package authors duplicate their functions and you may need to use `async` package to convert async functions to sync.
+
+Love Ruby!
+
+<!-- full end -->
