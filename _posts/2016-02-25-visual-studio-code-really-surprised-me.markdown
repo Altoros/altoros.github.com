@@ -6,8 +6,6 @@ author:
   name: Rodrigo Bournissent
   link: https://github.com/rbournissent
 ---
-# Visual Studio Code really surprised me
-
 ## Where I came from?
 I was a Windows user since I remember. I loved all the Microsoft products, even their  hardware, like Surface... until I met Linux when I joined Altoros. With Linux I started to see a new world, open source applications, a community, people sharing their knowledge, their own code, developers improving software made by other developers. So, I started to think: “Microsoft is very good, but maybe if they would start to share their code or listening their users in a different way, they could have much better products”.
 
