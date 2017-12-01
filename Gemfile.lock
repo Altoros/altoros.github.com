@@ -63,7 +63,7 @@ DEPENDENCIES
   guard
   guard-jekyll
   iconv (~> 1.0.4)
-  jekyll
+  jekyll (~> 0.11)
   liquid (= 2.4.1)
   maruku (= 0.6.0)
   rdiscount (= 1.6.8)
