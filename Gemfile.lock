@@ -9,7 +9,7 @@ GEM
     coderay (1.0.9)
     directory_watcher (1.5.1)
     fast-stemmer (1.0.2)
-    ffi (1.7.0)
+    ffi (1.11.2)
     formatador (0.2.4)
     guard (1.8.0)
       formatador (>= 0.2.4)
@@ -63,7 +63,7 @@ DEPENDENCIES
   guard
   guard-jekyll
   iconv (~> 1.0.4)
-  jekyll (~> 0.11)
+  jekyll (~> 0.11.2)
   liquid (= 2.4.1)
   maruku (= 0.6.0)
   rdiscount (= 1.6.8)
