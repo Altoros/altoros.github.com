@@ -3,8 +3,7 @@ layout: post
 title: Things that I hate as a web developer
 description: List of things that irritate us as a developers
 keywords: ruby, rails, js, lodash, angular, deep, complexity, quality, activeadmin
-refreshUrl: https://www.altoros.com/blog/things-that-i-hate-as-a-web-developer/
-canonicalUrl: https://www.altoros.com/blog/things-that-i-hate-as-a-web-developer/
+caconicalUrl: https://www.altoros.com/blog/things-that-i-hate-as-a-web-developer/
 author:
   name: Eugene Melnikov
   link: https://github.com/melnikaite
