@@ -1,3 +1,5 @@
+<meta http-equiv="refresh" content="0; url="https://www.altoros.com/blog/things-that-i-hate-as-a-web-developer/">
+<link rel="canonical" href="https://www.altoros.com/blog/things-that-i-hate-as-a-web-developer/" />
 ---
 layout: post
 title: Things that I hate as a web developer
