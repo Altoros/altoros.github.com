@@ -2,6 +2,8 @@
 layout: post
 title: "Ruby integration testing tools: population census 2014"
 description: Structure of actual in 2014 year tools for integration testing in ruby
+caconicalUrl: https://www.altoros.com/blog/ruby-integration-testing-tools-population-census-2014/
+redirectUrl: ruby-integration-testing-tools-population-census-2014
 keywords: ruby, cucumber, rspec, sahi, capybara, watir, webkit, selenium, poltergeist, phantomjs
 author:
   name: Eugene Melnikov

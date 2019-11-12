@@ -2,6 +2,8 @@
 layout: post
 title: How to deploy Discourse with Juju
 description: This guide walks through process of deployment Discourse with Juju and Rack charm.
+caconicalUrl: https://www.altoros.com/blog/how-to-deploy-discourse-with-juju/
+redirectUrl: how-to-deploy-discourse-with-juju
 author:
   name: Pavel Pachkovskij
   link: https://github.com/pavelpachkovskij

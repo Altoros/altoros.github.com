@@ -2,6 +2,8 @@
 layout: post
 title: Visual Studio Code really surprised me
 description: Opinion and short description about Visual Studio Code, the new open-source IDE developed by Microsoft
+caconicalUrl: https://www.altoros.com/blog/visual-studio-code-really-surprised-me/
+redirectUrl: visual-studio-code-really-surprised-me
 author:
   name: Rodrigo Bournissent
   link: https://github.com/rbournissent
