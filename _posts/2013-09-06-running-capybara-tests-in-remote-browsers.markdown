@@ -2,8 +2,9 @@
 layout: post
 title: Running capybara tests in remote browsers
 description: How to automatically test your application in real browsers
+equiv: refresh
 caconicalUrl: https://www.altoros.com/blog/running-capybara-tests-in-remote-browsers/
-redirectUrl: running-capybara-tests-in-remote-browsers
+redirectUrl: 0; url=https://www.altoros.com/blog/running-capybara-tests-in-remote-browsers/
 author:
   name: Eugene Melnikov
   link: https://github.com/melnikaite

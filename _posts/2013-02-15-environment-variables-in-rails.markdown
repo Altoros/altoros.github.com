@@ -2,8 +2,9 @@
 layout: post
 title: Environment variables in Rails
 description: How to define environment variables in Rails
+equiv: refresh
 caconicalUrl: https://www.altoros.com/blog/implementing-and-improving-postgresql-fulltext-search/
-redirectUrl: implementing-and-improving-postgresql-fulltext-search
+redirectUrl: 0; url=https://altoros.com/blog/implementing-and-improving-postgresql-fulltext-search/
 author:
   name: Andrey Koleshko
   link: https://github.com/ka8725
