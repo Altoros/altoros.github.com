@@ -8,5 +8,3 @@ pygments: true
 markdown: rdiscount
 rdiscount:
   extensions: [smart, autolink]
-plugins:
-  - jekyll-redirect-from
