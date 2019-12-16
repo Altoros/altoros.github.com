@@ -2,6 +2,7 @@
 layout: post
 title: Speeding up Ruby tests
 description: This post describes different ways to speed-up development using TDD
+redirect_from: "https://www.altoros.com/blog/speeding-up-ruby-tests-2/"
 author:
   name: Alexander Borovsky
   link: https://github.com/borovsky
