@@ -2,6 +2,9 @@
 layout: post
 title: Mandrill – free SMTP server for applications
 description: About new service from MailChimp creators
+equiv: refresh
+caconicalUrl: https://www.altoros.com/blog/mandrill-free-smtp-server-for-applications-2/
+redirectUrl: 0; url=https://www.altoros.com/blog/mandrill-free-smtp-server-for-applications-2/
 author:
   name: Eugene Melnikov
   link: https://github.com/melnikaite

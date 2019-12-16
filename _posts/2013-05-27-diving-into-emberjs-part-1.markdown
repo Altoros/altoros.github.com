@@ -2,6 +2,9 @@
 layout: post
 title: Diving into Ember.js - Part 1
 description: Step-by-step tutorial on Ember.js framework.
+equiv: refresh
+caconicalUrl: https://www.altoros.com/blog/diving-into-ember-js-part-1-2/
+redirectUrl: 0; url=https://www.altoros.com/blog/diving-into-ember-js-part-1-2/
 author:
   name: Nastia Shaternik
   link: https://github.com/drone-loops

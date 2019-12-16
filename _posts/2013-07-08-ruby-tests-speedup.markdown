@@ -2,6 +2,9 @@
 layout: post
 title: Speeding up Ruby tests
 description: This post describes different ways to speed-up development using TDD
+equiv: refresh
+caconicalUrl: https://www.altoros.com/blog/speeding-up-ruby-tests
+redirectUrl: 0; url=https://www.altoros.com/blog/speeding-up-ruby-tests
 author:
   name: Alexander Borovsky
   link: https://github.com/borovsky

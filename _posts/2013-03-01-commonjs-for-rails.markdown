@@ -3,6 +3,9 @@
 layout: post
 title: CommonJS for Rails
 description: How to structure your Rails' JS even more with sprockets-commonjs ruby gem
+equiv: refresh
+caconicalUrl: https://www.altoros.com/blog/commonjs-for-rails/
+redirectUrl: 0; url=https://www.altoros.com/blog/commonjs-for-rails/
 author:
   name: Evgeny Okhrimenko
   link: https://github.com/netoctone

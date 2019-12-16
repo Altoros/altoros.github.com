@@ -2,6 +2,9 @@
 layout: post
 title: Is your project secure?
 description: Some tools for security static analysis of Rails projects
+equiv: refresh
+caconicalUrl: https://www.altoros.com/blog/is-your-project-secure/
+redirectUrl: 0; url=https://www.altoros.com/blog/is-your-project-secure/
 author:
   name: Mikhail Pobolovets
   link: https://github.com/styx
