@@ -2,9 +2,9 @@
 layout: post
 title: Let's test it well (and simply, and smartly)
 description: Useful tips about RSpec to start following if you haven't done it yet
-equiv: refresh
 caconicalUrl: https://www.altoros.com/blog/lets-test-it-well-and-simply-and-smartly-2/
-redirectUrl: 0; url=https://www.altoros.com/blog/lets-test-it-well-and-simply-and-smartly-2/
+redirect_to:
+  - https://www.altoros.com/blog/lets-test-it-well-and-simply-and-smartly-2/
 author:
   name: Nastia Shaternik
   link: https://github.com/drone-loops

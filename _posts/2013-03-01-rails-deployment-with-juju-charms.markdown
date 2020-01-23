@@ -2,9 +2,9 @@
 layout: post
 title: Easy deployment of Rack applications with Juju
 description: How to deploy Rack applications with Juju orchestration tool.
-equiv: refresh
 caconicalUrl: https://www.altoros.com/blog/easy-deployment-of-rack-applications-with-juju/
-redirectUrl: 0; url=https://www.altoros.com/blog/easy-deployment-of-rack-applications-with-juju/
+redirect_to:
+  - https://www.altoros.com/blog/easy-deployment-of-rack-applications-with-juju/
 author:
   name: Pavel Pachkovskij
   link: https://github.com/pavelpachkovskij

@@ -2,9 +2,9 @@
 layout: post
 title: Simple short urls
 description: Making simply short urls
-equiv: refresh
 caconicalUrl: https://www.altoros.com/blog/simple-short-urls/
-redirectUrl: 0; url=https://www.altoros.com/blog/simple-short-urls/
+redirect_to:
+  - https://www.altoros.com/blog/simple-short-urls/
 author:
   name: Nikolai Sharangovich
   link: https://github.com/Sharangovich

@@ -2,9 +2,9 @@
 layout: post
 title: Using Bosh Lite
 description: Notes on using Bosh Lite, tool for deploying Cloudfoundry and other releases locally.
-equiv: refresh
 caconicalUrl: https://www.altoros.com/blog/using-bosh-lite/
-redirectUrl: 0; url=https://www.altoros.com/blog/using-bosh-lite/
+redirect_to:
+  - https://www.altoros.com/blog/using-bosh-lite/
 author:
   name: Nastia Shaternik
   link: https://github.com/drone-loops

@@ -2,9 +2,9 @@
 layout: post
 title: 2 days with solr or 25x speed up of reindex
 description: How to speed up solr reindex.
-equiv: refresh
 caconicalUrl: https://www.altoros.com/blog/2-days-with-solr-or-25x-speed-up-of-reindex/
-redirectUrl: 0; url=https://www.altoros.com/blog/2-days-with-solr-or-25x-speed-up-of-reindex/
+redirect_to:
+  - https://www.altoros.com/blog/2-days-with-solr-or-25x-speed-up-of-reindex/
 author:
   name: Eugene Melnikov
   link: https://github.com/melnikaite

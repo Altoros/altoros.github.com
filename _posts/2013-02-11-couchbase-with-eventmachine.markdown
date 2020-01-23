@@ -3,6 +3,7 @@
 layout: post
 title: Using Couchbase Ruby Gem with EventMachine
 description: How to integrate your EventMachine application with couchbase ruby gem
+caconicalUrl: https://www.altoros.com/blog/using-couchbase-ruby-gem-with-eventmachine/
 redirect_to:
   - https://www.altoros.com/blog/using-couchbase-ruby-gem-with-eventmachine/
 author:

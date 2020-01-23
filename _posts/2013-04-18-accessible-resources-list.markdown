@@ -2,9 +2,9 @@
 layout: post
 title: "Accessible resources list - DRY solution for controllers"
 description: "In this post I describe how to achieve DRY solution for controller's actions which return the list of scoped objects. In the another words I show here how to avoid repetitive changes in controllers actions like this: Model.where :active => true"
-equiv: refresh
 caconicalUrl: https://www.altoros.com/blog/accessible-resources-list-dry-solution-for-controllers/
-redirectUrl: 0; url=https://www.altoros.com/blog/accessible-resources-list-dry-solution-for-controllers/
+redirect_to:
+  - https://www.altoros.com/blog/accessible-resources-list-dry-solution-for-controllers/
 author:
   name: Andrey Koleshko
   link: https://github.com/ka8725

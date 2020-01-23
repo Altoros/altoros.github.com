@@ -2,9 +2,9 @@
 layout: post
 title: S3 Storage for your Rails application
 description: How to quickly configure S3
-equiv: refresh
 caconicalUrl: https://www.altoros.com/blog/s3-storage-for-your-rails-application/
-redirectUrl: 0; url=https://www.altoros.com/blog/s3-storage-for-your-rails-application/
+redirect_to:
+  - https://www.altoros.com/blog/s3-storage-for-your-rails-application/
 author:
   name: Nikolai Sharangovich
   link: https://github.com/Sharangovich
