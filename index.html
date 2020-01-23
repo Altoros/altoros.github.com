@@ -19,7 +19,7 @@ title: Altoros Team
 <div class="page">
   {% include page_meta.html %}
   <div class="page_contents">
-    <p>Sorry, the blog has been moved to a new address.</p> 
+    {{ page.content | replace:'full start -->','' | replace:'<!-- full end','' }} 
   </div>
   {% include social_links.html %}
   <a href="{{page.url}}" class="more" rel="bookmark" title="Permalink to {{page.title}}">Continue reading this post</a>
