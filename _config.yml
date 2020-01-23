@@ -6,5 +6,7 @@ url: 'http://altoros.github.io'
 permalink: '/:year/:title'
 pygments: true
 markdown: rdiscount
+plugins:
+  - jekyll-redirect-from
 rdiscount:
   extensions: [smart, autolink]
