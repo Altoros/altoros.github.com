@@ -2,9 +2,6 @@
 layout: post
 title:  "Email on Rails"
 description: Different aspects of work with email in Ruby on Rails
-caconicalUrl: https://www.altoros.com/blog/email-on-rails/
-redirect_to:
-  - https://www.altoros.com/blog/email-on-rails/
 keywords: ruby, rails, email
 date:   2014-12-22 23:15:45
 author:
