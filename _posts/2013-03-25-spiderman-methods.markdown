@@ -3,8 +3,6 @@ layout: post
 title: Spiderman's extenstion methods
 description: The one and only Spiderman's cheat sheet about Active Support core extension methods
 caconicalUrl: https://www.altoros.com/blog/spidermans-extenstion-methods/
-redirect_to:
-  - https://www.altoros.com/blog/spidermans-extenstion-methods/
 author:
   name: Alexander Sologub
   link: https://github.com/marvelousNinja

@@ -3,8 +3,6 @@ layout: post
 title: Organizing storage in multiple fog containers using Carrierwave 
 description: Carrierwave gem and it's inner workings, organizing switching content between private and public containers  
 caconicalUrl: https://www.altoros.com/blog/organizing-storage-in-multiple-fog-containers-using-carrierwave/
-redirect_to:
-  - https://www.altoros.com/blog/organizing-storage-in-multiple-fog-containers-using-carrierwave/
 author:
   name: Dmitry Savitski
   link: https://github.com/MrDominusNox

@@ -3,8 +3,6 @@ layout: post
 title: Websocket-Rails Gem
 description: Easy to get started websocket gem for rich Rails application. 
 caconicalUrl: https://www.altoros.com/blog/websocket-rails-gem/
-redirect_to:
-  - https://www.altoros.com/blog/websocket-rails-gem/
 author:
   name: Dmitry Savitski
   link: https://github.com/MrDominusNox

@@ -3,8 +3,6 @@ layout: post
 title: "Love Ruby"
 description: How I realized that I love Ruby
 caconicalUrl: https://www.altoros.com/blog/love-ruby/
-redirect_to:
-  - https://www.altoros.com/blog/love-ruby/
 keywords: ruby, node
 author:
   name: Eugene Melnikov
