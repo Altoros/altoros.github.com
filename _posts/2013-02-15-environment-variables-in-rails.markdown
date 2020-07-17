@@ -3,8 +3,8 @@ layout: post
 title: Environment variables in Rails
 description: How to define environment variables in Rails
 caconicalUrl: https://www.altoros.com/blog/environment-variables-in-rails/
-<!--- redirect_to:
-  - https://www.altoros.com/blog/environment-variables-in-rails/ -->
+{% redirect_to:
+  - https://www.altoros.com/blog/environment-variables-in-rails/ %}
 author:
   name: Andrey Koleshko
   link: https://github.com/ka8725
