@@ -3,6 +3,8 @@ layout: post
 title: Two (or three) powerful iterators
 description: Two Ruby iterator methods I really love, thanks to its simplicity and beauty
 caconicalUrl: https://www.altoros.com/blog/two-or-three-powerful-iterators/
+redirect_to:
+  - https://www.altoros.com/blog/two-or-three-powerful-iterators/
 author:
   name: Emiliano Coppo
   link: https://github.com/bismark64

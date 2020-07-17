@@ -3,6 +3,8 @@ layout: post
 title: "Simple fast application: Sinatra + Espresso + Padrino + Goliath + Rails"
 description: Benchmark comparison of ruby frameworks
 caconicalUrl: https://www.altoros.com/blog/simple-fast-application-sinatra-espresso-padrino-goliath-rails/
+redirect_to:
+  - https://www.altoros.com/blog/simple-fast-application-sinatra-espresso-padrino-goliath-rails/
 author:
   name: Eugene Melnikov
   link: https://github.com/melnikaite

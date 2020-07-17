@@ -3,6 +3,8 @@ layout: post
 title: Automatic validation
 description: Validate common database constraints
 caconicalUrl: https://www.altoros.com/blog/automatic-validation/
+redirect_to:
+  - https://www.altoros.com/blog/automatic-validation/
 author:
   name: Yury Kaliada
   link: https://github.com/FUT

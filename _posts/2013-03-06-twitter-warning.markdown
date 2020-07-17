@@ -3,6 +3,8 @@ layout: post
 title: News from Twitter
 description: Warning about changes on Twitter API
 caconicalUrl: https://www.altoros.com/blog/news-from-twitter/
+redirect_to:
+  - https://www.altoros.com/blog/news-from-twitter/
 author:
   name: Nikolai Sharangovich
   link: https://github.com/Sharangovich
