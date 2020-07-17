@@ -3,6 +3,8 @@ layout: post
 title: Simple short urls
 description: Making simply short urls
 caconicalUrl: https://www.altoros.com/blog/simple-short-urls/
+redirect_to:
+  - https://www.altoros.com/blog/simple-short-urls/
 author:
   name: Nikolai Sharangovich
   link: https://github.com/Sharangovich
