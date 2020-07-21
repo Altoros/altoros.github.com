@@ -3,6 +3,8 @@ layout: post
 title: Using SSL in your local Rails environment
 description: Using SSL in your local Rails environment
 caconicalUrl: https://www.altoros.com/blog/using-ssl-in-your-local-rails-environment/
+redirect_to:
+  - https://www.altoros.com/blog/using-ssl-in-your-local-rails-environment/
 author:
   name: Mikhail Pobolovets
   link: https://github.com/styx

@@ -3,6 +3,8 @@ layout: post
 title: DigitalOcean – new amazing cloud VPS hosting
 description: Why DigitalOcean so cute
 caconicalUrl: https://www.altoros.com/blog/digitalocean-new-amazing-cloud-vps-hosting-2/
+redirect_to:
+  - https://www.altoros.com/blog/digitalocean-new-amazing-cloud-vps-hosting-2/
 author:
   name: Eugene Melnikov
   link: https://github.com/melnikaite
