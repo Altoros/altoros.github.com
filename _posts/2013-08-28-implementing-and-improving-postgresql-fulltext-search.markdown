@@ -3,6 +3,8 @@ layout: post
 title: Implementing and improving PostgreSQL fulltext search.
 description: Here I will describe how to use postgresql fulltext search.
 caconicalUrl: https://www.altoros.com/blog/implementing-and-improving-postgresql-fulltext-search/
+redirect_to:
+  - https://www.altoros.com/blog/implementing-and-improving-postgresql-fulltext-search/
 author:
   name: Pavel Astraukh
   link: https://github.com/enotpoloskun
