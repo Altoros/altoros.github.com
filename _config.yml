@@ -1,6 +1,6 @@
 safe: true
 lsi: false
-paginate: 10
+paginate: 40
 paginate_path: "blog/page:num"
 url: 'http://altoros.github.io'
 permalink: '/:year/:title'
